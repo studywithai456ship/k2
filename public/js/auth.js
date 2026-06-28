@@ -440,10 +440,14 @@ function initAuth() {
         currentUser = user;
         isGuest = false;
         authOverlay.classList.remove('show');
-        loadFromCloud().then(() => { renderAll(); });
+        loadFromCloud().then(() => {
+            renderAll();
+            hideLoader();
+        }).catch(() => { hideLoader(); });
     } else {
         authOverlay.classList.add('show');
         setAuthMode(true);
+        hideLoader();
     }
     updateAuthUI();
 }
