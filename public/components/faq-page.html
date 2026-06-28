@@ -1,0 +1,117 @@
+<div class="faq-page" id="faqPage">
+    <div class="faq-header">
+        <button class="faq-back-btn" id="faqBackBtn">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-content">
+        <div class="faq-search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="faqSearchInput" placeholder="Search FAQs..." />
+        </div>
+
+        <div class="faq-item" data-keywords="streak streaks consecutive days study">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>How do I get a Streak?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>A streak counts the number of <strong>consecutive days</strong> you mark at least one task as "Done" (green checkmark).</p>
+                <ul>
+                    <li>Mark today's task as <strong>Done</strong> to keep your streak alive.</li>
+                    <li>If you miss a day (no task marked Done), your streak resets to <strong>0</strong>.</li>
+                    <li>Your <strong>Longest Streak</strong> is tracked automatically and shown on the Streak Card.</li>
+                    <li>Achievements unlock at <strong>7-day</strong> and <strong>30-day</strong> streaks.</li>
+                </ul>
+                <p>Tip: Even on busy days, marking one small task as Done keeps your streak going!</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-keywords="achievements claim unlock activate badges trophies">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>What are Achievements and how do I unlock them?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Achievements are badges that unlock automatically when you reach specific milestones:</p>
+                <ul>
+                    <li><strong>First Step</strong> — Complete your first day's task.</li>
+                    <li><strong>7-Day Streak</strong> — Study 7 days in a row.</li>
+                    <li><strong>30-Day Streak</strong> — Study 30 days in a row.</li>
+                    <li><strong>Arithmetic Master</strong> — Complete 80% of Arithmetic topics.</li>
+                    <li><strong>DI Master</strong> — Complete 80% of Data Interpretation topics.</li>
+                    <li><strong>File Collector</strong> — Solve 100 practice files.</li>
+                    <li><strong>Video Learner</strong> — Watch 50 videos.</li>
+                    <li><strong>Mock Warrior</strong> — Take 10 mock tests.</li>
+                </ul>
+                <p>You don't need to manually claim them — they activate automatically once the condition is met, and the date is recorded.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-keywords="subject progress phases completion percentage tracking">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>How does Subject Progress work?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Your course plan is divided into <strong>5 phases</strong>, each representing a major area of study:</p>
+                <ul>
+                    <li><strong>Fundamentals</strong> — Number System, Simplification, Quadratic Equations, etc.</li>
+                    <li><strong>Data Interpretation</strong> — Prelims DI, Caselet DI.</li>
+                    <li><strong>Arithmetic</strong> — Percentage, Ratio, Profit & Loss, Time & Work, etc.</li>
+                    <li><strong>Speed & Distance</strong> — Trains, Boats, Time-Speed-Distance.</li>
+                    <li><strong>Advanced</strong> — Mensuration, P&C, Probability, Final Revisions.</li>
+                </ul>
+                <p>The Subject Progress section shows a progress bar for each phase. The percentage is calculated as <strong>(tasks Done / total tasks)</strong> in that phase. As you mark tasks complete, the bars fill up automatically.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-keywords="bot telegram reminder notification automation alert">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>How does the Telegram Bot help me?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>The Telegram Bot keeps you accountable with automated reminders and progress updates:</p>
+                <ul>
+                    <li><strong>Daily Reminders</strong> — Get a morning reminder with today's topic, videos, and files.</li>
+                    <li><strong>Evening Check-in</strong> — A nudge in the evening to mark your task as Done.</li>
+                    <li><strong>Missed Alerts</strong> — If you haven't marked a task by night, you get a "you missed today" alert.</li>
+                    <li><strong>Progress Updates</strong> — Weekly summary of your completion rate and streak.</li>
+                    <li><strong>OTP Authentication</strong> — The bot sends a 6-digit OTP to verify your Telegram account during registration.</li>
+                </ul>
+                <p>To get started: open the bot on Telegram, type <code>/start</code>, copy your numeric Telegram User ID, and paste it during registration. All reminders use <strong>Indian Standard Time (IST)</strong>.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-keywords="course plan subject select pin custom video tracker">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>How do I use the Course Selector and Video Tracker?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Next to the <strong>Course Plan</strong> heading, you'll find a searchable dropdown to select subjects:</p>
+                <ul>
+                    <li><strong>Quant, Reasoning, English, General Studies</strong> — Built-in subjects with dummy data.</li>
+                    <li><strong>Custom</strong> — Add your own subject with custom topics and videos.</li>
+                    <li>Click the <strong>pin icon</strong> on a pinned subject to open the Video Tracker.</li>
+                    <li>In the Video Tracker, add videos with title, duration, mock test status, revisions, and mock attempts.</li>
+                </ul>
+                <p>Double-tap a topic name to shift the schedule <strong>-1 day</strong>. Triple-tap to shift <strong>+1 day</strong>.</p>
+            </div>
+        </div>
+
+        <div class="faq-item" data-keywords="theme dark light customize appearance">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>Can I change the theme?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes! Click the <strong>Theme</strong> button in the header to open the theme picker. You can preview themes before saving. Your choice is saved automatically and synced to the cloud when logged in.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
