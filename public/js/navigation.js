@@ -3,6 +3,11 @@
 // ============================================================
 
 let currentPage = 'home';
+
+function toggleFAQ(el) {
+    const item = el.closest('.faq-item');
+    item.classList.toggle('open');
+}
 let userSettings = {
     fullName: '',
     age: '',
@@ -82,18 +87,26 @@ function navigateToPage(page) {
     // Show/hide settings page
     const settingsPage = document.getElementById('settingsPage');
     const aboutPage = document.getElementById('aboutPage');
+    const faqPage = document.getElementById('faqPage');
     const dashboard = document.getElementById('dashboard');
 
     if (page === 'settings') {
         loadSettingsForm();
         settingsPage.classList.add('active');
         aboutPage.classList.remove('active');
+        faqPage.classList.remove('active');
     } else if (page === 'about') {
         aboutPage.classList.add('active');
         settingsPage.classList.remove('active');
+        faqPage.classList.remove('active');
+    } else if (page === 'faq') {
+        faqPage.classList.add('active');
+        settingsPage.classList.remove('active');
+        aboutPage.classList.remove('active');
     } else {
         settingsPage.classList.remove('active');
         aboutPage.classList.remove('active');
+        faqPage.classList.remove('active');
     }
 
     // Scroll to section if on dashboard
@@ -153,6 +166,30 @@ function initSettingsPage() {
         aboutBackBtn.addEventListener('click', () => {
             document.getElementById('aboutPage').classList.remove('active');
             navigateToPage('home');
+        });
+    }
+
+    const faqBackBtn = document.getElementById('faqBackBtn');
+    if (faqBackBtn) {
+        faqBackBtn.addEventListener('click', () => {
+            document.getElementById('faqPage').classList.remove('active');
+            navigateToPage('home');
+        });
+    }
+
+    const faqSearchInput = document.getElementById('faqSearchInput');
+    if (faqSearchInput) {
+        faqSearchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const keywords = (item.dataset.keywords || '').toLowerCase();
+                if (!query || text.includes(query) || keywords.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
     }
 
