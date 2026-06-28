@@ -13,7 +13,9 @@ const COMPONENTS = [
     ['insight-card', 'components/insight-card.html'],
     ['io-bar', 'components/io-bar.html'],
     ['footer', 'components/footer.html'],
-    ['settings-page', 'components/settings-page.html']
+    ['settings-page', 'components/settings-page.html'],
+    ['about-page', 'components/about-page.html'],
+    ['faq-page', 'components/faq-page.html']
 ];
 
 const SCRIPTS = [
@@ -201,7 +203,6 @@ async function bootstrap() {
     bindEvents();
     window.renderAll = renderAll;
     init();
-    hideLoader();
 }
 
 bootstrap().catch((error) => {
