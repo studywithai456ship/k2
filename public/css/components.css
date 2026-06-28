@@ -986,3 +986,292 @@
 .d-topic:hover .tap-hint-tooltip {
     opacity: 0.7;
 }
+
+/* ============================================================
+   COURSE SELECTOR DROPDOWN (searchable)
+   ============================================================ */
+.course-selector-wrap {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+.course-dropdown {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+.course-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 14px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.course-dropdown-trigger:hover {
+    border-color: var(--accent);
+}
+.course-dropdown-trigger > span {
+    flex: 1;
+    text-align: left;
+}
+.course-dropdown-arrow {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+}
+.course-dropdown.open .course-dropdown-arrow {
+    transform: rotate(180deg);
+}
+.course-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(10, 30, 50, 0.18);
+    z-index: 100;
+    overflow: hidden;
+    max-height: 360px;
+    flex-direction: column;
+}
+.course-dropdown.open .course-dropdown-menu {
+    display: flex;
+}
+.course-dropdown-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.course-dropdown-search i {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+.course-dropdown-search input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 0.82rem;
+    outline: none;
+}
+.course-dropdown-list {
+    overflow-y: auto;
+    max-height: 240px;
+}
+.course-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    transition: 0.15s;
+    border-bottom: 1px solid var(--border-color);
+}
+.course-dropdown-item:hover {
+    background: var(--input-bg);
+}
+.course-dropdown-item.selected {
+    background: rgba(42, 127, 207, 0.1);
+    color: var(--accent);
+    font-weight: 700;
+}
+.course-dropdown-item .cd-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+.course-dropdown-item .cd-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.course-dropdown-item .cd-name {
+    font-weight: 600;
+}
+.course-dropdown-item .cd-meta {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+}
+.course-dropdown-item .cd-pin-badge {
+    font-size: 0.6rem;
+    color: var(--accent);
+}
+.course-dropdown-add {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: none;
+    border-top: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.course-dropdown-add:hover {
+    background: rgba(42, 127, 207, 0.08);
+}
+.course-pin-btn, .course-manage-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.course-pin-btn:hover, .course-manage-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.course-pin-btn.pinned {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/* ============================================================
+   CUSTOM COURSE MANAGER MODAL
+   ============================================================ */
+.cc-modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.cc-subject-block {
+    background: var(--input-bg);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+}
+.cc-subject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.cc-subject-name-input {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    outline: none;
+}
+.cc-subject-name-input:focus { border-color: var(--accent); }
+.cc-subject-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+    margin-left: 8px;
+}
+.cc-subject-delete:hover { color: var(--error); background: rgba(239, 68, 68, 0.1); }
+.cc-topic-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+    align-items: center;
+}
+.cc-topic-row input {
+    padding: 5px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 0.78rem;
+    outline: none;
+}
+.cc-topic-row input:focus { border-color: var(--accent); }
+.cc-topic-name { flex: 1; }
+.cc-topic-vids { width: 50px; }
+.cc-topic-files { width: 50px; }
+.cc-topic-delete {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 4px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+.cc-topic-delete:hover { color: var(--error); }
+.cc-add-topic-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px dashed var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.cc-add-topic-btn:hover { background: rgba(42, 127, 207, 0.08); }
+.cc-add-subject-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 2px dashed var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.cc-add-subject-btn:hover { background: rgba(42, 127, 207, 0.08); }
+.cc-empty {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
